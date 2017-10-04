@@ -1,23 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
-import { Icon } from '../components'
+import { Icon } from '../components';
 //all screen
-import Splash from '../screens/splash'
-import Home from '../screens/home'
-import Camera from '../screens/camera'
-import Message from '../screens/message'
-import NewPost from '../screens/newPost'
-import Notification from '../screens/notification'
-import Search from '../screens/search'
-import Profile from '../screens/profile'
-import { colors, styleApp, constants } from '../configs'
-import { icon } from '../assets'
+import Splash from '../screens/splash';
+import Home from '../screens/home';
+import Camera from '../screens/camera';
+import Message from '../screens/message';
+import NewPost from '../screens/newPost';
+import Notification from '../screens/notification';
+import Search from '../screens/search';
+import Profile from '../screens/profile';
+import { colors, styleApp, constants } from '../configs';
+import { icon } from '../assets';
 
 const getIconTab = (name) => ({ tintColor }) => (
     <Icon name={name} color={tintColor} disable />
-)
+);
 
-export default StackNavigator(
+const Navigation = StackNavigator(
     {
         Splash: {
             screen: Splash
@@ -123,4 +124,8 @@ export default StackNavigator(
         },
 
     }
-)
+);
+
+const mapStateToProps = (state) => ({ nav: state.nav });
+
+export default connect(mapStateToProps)(Navigation);

@@ -1,44 +1,38 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { TabNavigator, TabBarTop } from 'react-navigation'
-import { TextInput, View, StyleSheet, Platform } from 'react-native';
-import { colors, constants, styleApp } from '../configs'
-import { Text, Icon } from './'
+import { TabNavigator, TabBarTop } from 'react-navigation';
+import { View } from 'react-native';
+import { colors, constants, styleApp } from '../configs';
 
 class Top extends Component {
     render() {
         // text của input thay đổi this.props.screenProps.textSearchv
         return (
-            <View>
-            </View>
-        )
+            <View />
+        );
     }
 }
 
 class People extends Component {
     render() {
         return (
-            <View>
-            </View>
-        )
+            <View />
+        );
     }
 }
 
 class Tags extends Component {
     render() {
         return (
-            <View>
-            </View>
-        )
+            <View />
+        );
     }
 }
 
 class Places extends Component {
     render() {
         return (
-            <View>
-            </View>
-        )
+            <View />
+        );
     }
 }
 
@@ -75,14 +69,14 @@ const ViewContent = TabNavigator({
         }
 
 
-    })
+    });
 
 
 export default class TabSearch extends Component {
     render() {
-        const { textSearch } = this.props
+        const { textSearch } = this.props;
         return (
             <ViewContent screenProps={{ textSearch }} />
-        )
+        );
     }
 }

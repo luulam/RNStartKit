@@ -1,5 +1,5 @@
 import { Platform, Dimensions } from 'react-native';
-const { width, height } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window');
 
 const colors = {
     primary: '#edbbd0',
@@ -16,7 +16,7 @@ const colors = {
     red: '#db2828',
     white: '#ffffff',
     black: '#0f0f0f'
-}
+};
 
 const constants = {
     appWidth: width < height ? width : height,
@@ -26,7 +26,7 @@ const constants = {
     padHor: 8,
     padVer: 4,
     pad: 4,
-    opacity: .6,
+    opacity: 0.6,
     border: 0.7,
     borderRadius: 6,
     font: {
@@ -39,7 +39,7 @@ const constants = {
     fab: 42,
     icon: 38,
     btnHeight: 38,
-}
+};
 
 const styleApp = {
     disable_shadow: {
@@ -52,14 +52,14 @@ const styleApp = {
     shadow: {
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 1,
-        shadowOpacity: .2,
+        shadowOpacity: 0.2,
         shadowColor: '#000000',
         elevation: 4
     }
-}
+};
 
 export {
     colors,
     constants,
     styleApp
-}
+};

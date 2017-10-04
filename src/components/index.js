@@ -1,12 +1,16 @@
-import Text from './Text';
+/**
+ * Base Component
+ */
+import Text from './Base/Text';
+import Button from './Base/Button';
+import KeyboardHandleView from './Base/KeyboardHandleView';
+import Icon from './Base/Icon';
+import InputText from './Base/InputText';
+
 import Header from './Header';
-import Icon from './Icon';
-import Button from './Button';
-import InputText from './InputText';
-import KeyboardHandleView from './KeyboardHandleView'
-import Notify from './Notify'
-import Dialog from './Dialog'
-import TabSearch from './TabSearch'
+import Notify from './Notify';
+import Dialog from './Dialog';
+import TabSearch from './TabSearch';
 
 export {
     Text,
@@ -18,4 +22,4 @@ export {
     KeyboardHandleView,
     Dialog,
     TabSearch
-}
+};

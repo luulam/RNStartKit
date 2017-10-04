@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, StyleSheet } from 'react-native'
-import { Header, Icon } from '../components'
-import { constants } from '../configs'
-import { icon } from '../assets'
+import { View, StyleSheet } from 'react-native';
+import { Header, Icon } from '../components';
+import { constants } from '../configs';
+import { icon } from '../assets';
 
 class Message extends Component {
     render() {
-        const { routeName } = this.props.navigation.state
+        const { routeName } = this.props.navigation.state;
         return (
             <View
                 style={styles.containers}
@@ -22,7 +22,7 @@ class Message extends Component {
                     }
                 />
             </View>
-        )
+        );
     }
 }
 
@@ -31,13 +31,13 @@ const styles = StyleSheet.create({
         paddingTop: constants.statusBarHeight,
         flex: 1
     }
-})
+});
 
-const mapStateToProps = () => ({})
-const mapDispatchToProps = () => ({})
+const mapStateToProps = () => ({});
+const mapDispatchToProps = () => ({});
 
 Message.propTypes = {
     navigation: PropTypes.any
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Message)
+export default connect(mapStateToProps, mapDispatchToProps)(Message);

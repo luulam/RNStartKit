@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet } from 'react-native'
-import { Text, Icon } from './'
-import { constants, styleApp } from '../configs'
-import { icon } from '../assets'
+import { View, StyleSheet } from 'react-native';
+import { Text, Icon } from './';
+import { constants, styleApp } from '../configs';
+import { icon } from '../assets';
 
 /**
  * 
@@ -51,8 +51,8 @@ let HeaderApp = ({
                 : null}
 
         </View>
-    )
-}
+    );
+};
 
 let styles = StyleSheet.create({
     containers: {
@@ -72,7 +72,7 @@ let styles = StyleSheet.create({
         left: 0,
         right: 0
     }
-})
+});
 
 HeaderApp.propTypes = {
     style: PropTypes.any,
@@ -81,11 +81,11 @@ HeaderApp.propTypes = {
     left: PropTypes.any,
     backPress: PropTypes.func,
     center: PropTypes.string
-}
+};
 
 HeaderApp.defaultProps = {
     style: styles.containers
-}
+};
 
 
-export default HeaderApp
+export default HeaderApp;

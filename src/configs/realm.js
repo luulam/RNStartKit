@@ -1,4 +1,4 @@
-import Realm from 'realm'
+import Realm from 'realm';
 
 
 let UserSchema = {
@@ -16,4 +16,4 @@ export default new Realm({
     // path: Realm.defaultPath,
     // schemaVersion: Realm.schemaVersion(Realm.defaultPath),
     schema: [UserSchema]
-})
+});

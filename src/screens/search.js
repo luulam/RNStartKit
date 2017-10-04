@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, StyleSheet, Keyboard } from 'react-native'
-import { Header, Icon, InputText, TabSearch } from '../components'
-import { constants } from '../configs'
-import { icon } from '../assets'
+import { View, StyleSheet, Keyboard } from 'react-native';
+import { Header, Icon, InputText, TabSearch } from '../components';
+import { constants } from '../configs';
+import { icon } from '../assets';
 
 class Search extends Component {
     constructor(props) {
-        super(props)
-        this._inputSearch = null
+        super(props);
+        this._inputSearch = null;
         this.state = {
             isSearch: false,
             textSearch: ''
-        }
+        };
     }
 
     _renderHeader = () => {
@@ -27,23 +27,23 @@ class Search extends Component {
                     <InputText
                         onChangeText={text => this.setState({ textSearch: text })}
                         onFocus={() => this.setState({ isSearch: true })}
-                        hint='Search'
+                        hint="Search"
                         key={'haha'}
-                        ref={(com) => this._inputSearch = com} />
+                        ref={(com) => { this._inputSearch = com; }} />
                 ]}
             />
-        )
+        );
     }
 
     _renderContentSearch = () => {
-        const { isSearch, textSearch } = this.state
-        return isSearch ? <TabSearch textSearch={textSearch} /> : null
+        const { isSearch, textSearch } = this.state;
+        return isSearch ? <TabSearch textSearch={textSearch} /> : null;
     }
 
     _renderContent = () => {
         return (
-            <View></View>
-        )
+            <View />
+        );
     }
 
     render() {
@@ -54,14 +54,14 @@ class Search extends Component {
                 {this._renderHeader()}
                 {this._renderContentSearch()}
             </View>
-        )
+        );
     }
 
     componentWillUpdate(nextProps, nextState) {
         if (nextState.isSearch) {
-            this._inputSearch.focus()
+            this._inputSearch.focus();
         } else {
-            Keyboard.dismiss()
+            Keyboard.dismiss();
         }
     }
 }
@@ -71,9 +71,9 @@ const styles = StyleSheet.create({
         paddingTop: constants.statusBarHeight,
         flex: 1
     }
-})
+});
 
-const mapStateToProps = () => ({})
-const mapDispatchToProps = () => ({})
+const mapStateToProps = () => ({});
+const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search)
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
-import { Text, Button, KeyboardHandleView } from './'
-import { constants } from '../configs'
+import { Text, Button, KeyboardHandleView } from './';
+import { constants } from '../configs';
 
 
 class Dialog extends Component {
@@ -22,7 +22,7 @@ class Dialog extends Component {
     }
 
     _renderButton = () => {
-        let { dialog } = this.props
+        let { dialog } = this.props;
         return (<View style={styles.containersButton}>
             {dialog.button.map((v, i) => <Button
                 key={i}
@@ -30,11 +30,11 @@ class Dialog extends Component {
                 title={v.title}
                 onPress={v.onPress}
             />)}
-        </View>)
+        </View>);
     }
 
     render() {
-        let { dialog } = this.props
+        let { dialog } = this.props;
 
         return dialog.show
             ? <View
@@ -57,7 +57,7 @@ class Dialog extends Component {
                 </View>
                 <KeyboardHandleView />
             </View>
-            : null
+            : null;
 
     }
 }
@@ -87,13 +87,13 @@ const styles = StyleSheet.create({
         marginBottom: constants.padHor * 3,
         alignSelf: 'center'
     }
-})
+});
 
 
 const mapStateToProps = (state) => {
     return {
         dialog: state.app.dialog,
-    }
-}
+    };
+};
 
-export default connect(mapStateToProps)(Dialog)
+export default connect(mapStateToProps)(Dialog);

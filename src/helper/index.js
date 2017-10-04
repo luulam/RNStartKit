@@ -1,3 +1,3 @@
-import userDB from './dataLocal/user'
+import userDB from './dataLocal/user';
 
-export { userDB }
+export { userDB };

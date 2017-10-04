@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
-import { Text } from './'
-import { colors, constants, styleApp } from '../configs'
+import { Text } from './';
+import { colors, constants, styleApp } from '../configs';
 
 
 class Notify extends Component {
@@ -22,18 +22,18 @@ class Notify extends Component {
                 key={i}>
                 <Text
                     color={colors.text_light}
-                    text={v['title']} />
+                    text={v.title} />
             </View>
-        )
+        );
     }
-    
+
     render() {
-        let { notifys } = this.props
+        let { notifys } = this.props;
         return (
             <View style={styles.containers}>
                 {notifys.map(this._renderNotify)}
             </View>
-        )
+        );
     }
 }
 
@@ -59,12 +59,12 @@ const styles = StyleSheet.create({
     text: {
         color: colors.text_light
     }
-})
+});
 
 const mapStateToProps = (state) => {
     return {
         notifys: state.app.notifys,
-    }
-}
+    };
+};
 
-export default connect(mapStateToProps)(Notify)
+export default connect(mapStateToProps)(Notify);

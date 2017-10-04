@@ -10,4 +10,4 @@ export default {
     camera: 'ios-camera-outline',
     send: 'ios-send-outline',
     message: 'ios-chatbubbles-outline'
-}
+};
