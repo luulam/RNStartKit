@@ -1,0 +1,37 @@
+{
+	"name": "RNStartKit",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"android": "node node_modules/react-native/local-cli/cli.js run-android",
+		"ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+		"test": "jest"
+	},
+	"dependencies": {
+		"immutability-helper": "^2.3.1",
+		"moment": "^2.18.1",
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.48.4",
+		"react-native-vector-icons": "^4.3.0",
+		"react-navigation": "^1.0.0-beta.11",
+		"react-redux": "^5.0.6",
+		"realm": "^1.10.3",
+		"redux": "^3.7.2",
+		"redux-thunk": "^2.2.0"
+	},
+	"devDependencies": {
+		"babel-jest": "21.2.0",
+		"babel-preset-react-native": "4.0.0",
+		"eslint-config-airbnb": "^15.1.0",
+		"eslint-plugin-import": "^2.7.0",
+		"eslint-plugin-jsx-a11y": "^5.1.1",
+		"eslint-plugin-react": "^7.4.0",
+		"eslint-plugin-react-native": "^3.1.0",
+		"jest": "21.2.1",
+		"react-test-renderer": "16.0.0-alpha.12"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
