@@ -6,13 +6,15 @@ import Button from './Base/Button';
 import KeyboardHandleView from './Base/KeyboardHandleView';
 import Icon from './Base/Icon';
 import InputText from './Base/InputText';
+import Notify from './Base/Notify';
+import Dialog from './Base/Dialog';
+import View from './Base/View';
 
 import Header from './Header';
-import Notify from './Notify';
-import Dialog from './Dialog';
 import TabSearch from './TabSearch';
 
 export {
+    View,
     Text,
     Notify,
     Header,
@@ -23,3 +25,4 @@ export {
     Dialog,
     TabSearch
 };
+

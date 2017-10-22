@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput, View, StyleSheet, Platform } from 'react-native';
-import { colors, constants } from '../../configs';
+import { Colors, Constants } from '../../configs';
 import { Text, Icon } from '../';
 
 export default class InputText extends Component {
 
     static propTypes = {
+        color: PropTypes.string,
+        italic: PropTypes.bool,
+        bold: PropTypes.bool,
+        upperCase: PropTypes.bool,
         defaultValue: PropTypes.string,
         hint: PropTypes.string,
         maxLength: PropTypes.number,
@@ -22,9 +26,13 @@ export default class InputText extends Component {
     }
 
     static defaultProps = {
+        color: Colors.text,
+        italic: false,
+        bold: false,
+        UpperCase: false,
         multiline: false,
         iconRemove: false,
-        hideBottom: true
+        hideBottom: true,
     }
 
     constructor(props) {
@@ -43,13 +51,13 @@ export default class InputText extends Component {
             ? <View style={styles.containersHint}>
                 <Text
                     text={hint}
-                    color={colors.access}
-                    fontSize={constants.font.sub}
+                    color={Colors.access}
+                    fontSize={Constants.font.sub}
                 />
                 {maxLength
                     ? <Text
-                        color={colors.access}
-                        fontSize={constants.font.sub}
+                        color={Colors.access}
+                        fontSize={Constants.font.sub}
                         text={`${value.length}/${maxLength}`} />
                     : null}
             </View>
@@ -63,12 +71,12 @@ export default class InputText extends Component {
             ? <View
                 style={[
                     styles.removeAll,
-                    { top: this.props.hintTop ? constants.font.sub + constants.padVer : 0 }
+                    { top: this.props.hintTop ? Constants.font.sub + Constants.padVer : 0 }
                 ]}
             >
                 <Icon
                     onPress={() => this._handRemoveAllText()}
-                    size={constants.font.nomal}
+                    size={Constants.font.nomal}
                     name="ios-close-circle-outline"
                 />
             </View>
@@ -79,14 +87,18 @@ export default class InputText extends Component {
         let { error } = this.state;
         return error
             ? <Text
-                size={constants.font.sub}
-                color={colors.error}
+                size={Constants.font.sub}
+                color={Colors.error}
                 text={error} />
             : null;
     }
 
     render() {
         const {
+            color,
+            bold,
+            italic,
+            upperCase,
             hint,
             multiline,
             style,
@@ -114,12 +126,15 @@ export default class InputText extends Component {
                     multiline={multiline}
                     underlineColorAndroid="transparent"
                     onChangeText={this._onChangeText}
-                    value={value}
+                    value={upperCase ? value.toUpperCase() : value}
                     onFocus={this._onFocus}
                     style={{
-                        fontSize: constants.font.nomal,
+                        color: color,
+                        fontWeight: bold ? 'bold' : undefined,
+                        fontStyle: italic ? 'italic' : undefined,
+                        fontSize: Constants.font.nomal,
                         ...style,
-                        paddingRight: constants.font.nomal,
+                        paddingRight: Constants.font.nomal,
                         height: height
                     }}
                     onContentSizeChange={this._onContentSizeChange}
@@ -147,7 +162,7 @@ export default class InputText extends Component {
     _onContentSizeChange = (event) => {
         let height = event.nativeEvent.contentSize.height;
         let { onContentSizeChange } = this.props;
-        if (Platform.OS === 'android') {this.setState({ height });}
+        if (Platform.OS === 'android') { this.setState({ height }); }
         onContentSizeChange && onContentSizeChange(event);
     }
 
@@ -177,14 +192,14 @@ export default class InputText extends Component {
 
 const styles = StyleSheet.create({
     containers: {
-        paddingHorizontal: constants.padHor,
-        paddingVertical: constants.padVer,
-        justifyContent: 'center',
-        flex: 1
+        flex: 1,
+        paddingHorizontal: Constants.padHor,
+        paddingVertical: Constants.padVer,
+        justifyContent: 'center'
     },
     borderBottom: {
-        borderBottomColor: colors.border,
-        borderBottomWidth: constants.border
+        borderBottomColor: Colors.border,
+        borderBottomWidth: Constants.border
     },
     containersHint: {
         flexDirection: 'row',
@@ -192,7 +207,7 @@ const styles = StyleSheet.create({
     },
     removeAll: {
         position: 'absolute',
-        right: constants.padHor,
+        right: Constants.padHor,
         bottom: 0,
         justifyContent: 'center'
     }

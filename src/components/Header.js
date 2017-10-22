@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import { Text, Icon } from './';
-import { constants, styleApp } from '../configs';
-import { icon } from '../assets';
+import { Constants, Style } from '../configs';
+import { Icons } from '../assets';
 
 /**
  * 
@@ -28,7 +28,7 @@ let HeaderApp = ({
             >
                 {backPress
                     ? <Icon
-                        name={icon.back}
+                        name={Icons.back}
                     />
                     : null}
                 {left}
@@ -45,7 +45,7 @@ let HeaderApp = ({
                     style={styles.containerCenter}
                     align={'center'}
                     text={title}
-                    fontSize={constants.font.header}
+                    fontSize={Constants.font.header}
                     bold
                 />
                 : null}
@@ -56,12 +56,12 @@ let HeaderApp = ({
 
 let styles = StyleSheet.create({
     containers: {
-        paddingHorizontal: constants.padHor,
-        height: constants.navBarHeight,
+        paddingHorizontal: Constants.padHor,
+        height: Constants.navBarHeight,
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        ...styleApp.shadow
+        ...Style.shadow
     },
     containerRow: {
         flexDirection: 'row'

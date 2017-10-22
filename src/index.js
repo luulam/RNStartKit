@@ -1,13 +1,11 @@
 import React from 'react';
-
-//import redux
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import reducers from './redux/reducers';
-import { StatusBar, View } from 'react-native';
-import { Notify, Dialog } from './components';
-import Navigation from './configs/navigation';
+import reducers from './redux';
+import { StatusBar } from 'react-native';
+import { Notify, Dialog, View } from './components';
+import Navigation from './configs/Navigation';
 
 export default () => {
 

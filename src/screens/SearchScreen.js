@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, StyleSheet, Keyboard } from 'react-native';
 import { Header, Icon, InputText, TabSearch } from '../components';
-import { constants } from '../configs';
-import { icon } from '../assets';
+import { Constants } from '../configs';
+import { Icons } from '../assets';
 
 class Search extends Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class Search extends Component {
                 left={[
                     <Icon
                         key={'icon'}
-                        name={isSearch ? icon.back : icon.search}
+                        name={isSearch ? Icons.back : Icons.search}
                         onPress={() => this.setState({ isSearch: !isSearch })} />,
                     <InputText
                         onChangeText={text => this.setState({ textSearch: text })}
@@ -68,7 +68,7 @@ class Search extends Component {
 
 const styles = StyleSheet.create({
     containers: {
-        paddingTop: constants.statusBarHeight,
+        paddingTop: Constants.statusBarHeight,
         flex: 1
     }
 });

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 import { } from '../components';
-import { constants } from '../configs';
+import { Constants } from '../configs';
 
-class Splash extends Component {
+class NewPost extends Component {
     render() {
         return (
             <View
@@ -16,7 +16,7 @@ class Splash extends Component {
 
 const styles = StyleSheet.create({
     containers: {
-        paddingTop: constants.statusBarHeight,
+        paddingTop: Constants.statusBarHeight,
         flex: 1
     }
 });
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
 const mapStateToProps = () => ({});
 const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Splash);
+export default connect(mapStateToProps, mapDispatchToProps)(NewPost);

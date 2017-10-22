@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import { Icon } from '../components';
 //all screen
-import Splash from '../screens/splash';
-import Home from '../screens/home';
-import Camera from '../screens/camera';
-import Message from '../screens/message';
-import NewPost from '../screens/newPost';
-import Notification from '../screens/notification';
-import Search from '../screens/search';
-import Profile from '../screens/profile';
-import { colors, styleApp, constants } from '../configs';
-import { icon } from '../assets';
+import Splash from '../screens/SplashScreen';
+import Home from '../screens/HomeScreen';
+import Camera from '../screens/CameraScreen';
+import Message from '../screens/MessageScreen';
+import NewPost from '../screens/NewPostScreen';
+import Notification from '../screens/NotificationScreen';
+import Search from '../screens/SearchScreen';
+import Profile from '../screens/ProfileScreen';
+import { Colors, Constants, Style } from '../configs';
+import { Icons } from '../assets';
 
 const getIconTab = (name) => ({ tintColor }) => (
     <Icon name={name} color={tintColor} disable />
@@ -47,8 +47,8 @@ const Navigation = StackNavigator(
                         }
                     }, {
                             initialRouteName: 'Home',
-                            swipeEnabled: false,
-                            animationEnabled: false,
+                            swipeEnabled: true,
+                            animationEnabled: true,
                             lazy: true,
                             tabBarComponent: TabBarBottom,
                             tabBarOptions: {
@@ -61,7 +61,7 @@ const Navigation = StackNavigator(
                     ),
                     navigationOptions: {
                         tabBarLabel: 'TabHome',
-                        tabBarIcon: getIconTab(icon.home)
+                        tabBarIcon: getIconTab(Icons.home)
 
                     }
                 },
@@ -69,28 +69,28 @@ const Navigation = StackNavigator(
                     screen: Search,
                     navigationOptions: {
                         tabBarLabel: 'Search',
-                        tabBarIcon: getIconTab(icon.search)
+                        tabBarIcon: getIconTab(Icons.search)
                     }
                 },
                 NewPost: {
                     screen: NewPost,
                     navigationOptions: {
                         tabBarLabel: 'NewPost',
-                        tabBarIcon: getIconTab(icon.add)
+                        tabBarIcon: getIconTab(Icons.add)
                     }
                 },
                 Notification: {
                     screen: Notification,
                     navigationOptions: {
                         tabBarLabel: 'Notification',
-                        tabBarIcon: getIconTab(icon.noti)
+                        tabBarIcon: getIconTab(Icons.noti)
                     }
                 },
                 Profile: {
                     screen: Profile,
                     navigationOptions: {
                         tabBarLabel: 'Profile',
-                        tabBarIcon: getIconTab(icon.profile)
+                        tabBarIcon: getIconTab(Icons.profile)
                     }
                 },
             }, {
@@ -100,13 +100,13 @@ const Navigation = StackNavigator(
                     lazy: true,
                     tabBarOptions: {
                         activeTintColor: 'black',
-                        inactiveTintColor: colors.border,
+                        inactiveTintColor: Colors.border,
                         showLabel: false,
                         showIcon: true,
                         style: {
-                            ...styleApp.disable_shadow,
-                            backgroundColor: colors.white,
-                            height: constants.navBarHeight
+                            ...Style.disable_shadow,
+                            backgroundColor: Colors.white,
+                            height: Constants.navBarHeight
                         }
                     },
 
@@ -119,8 +119,8 @@ const Navigation = StackNavigator(
         initialRouteName: 'TabMain',
         headerMode: 'none',
         cardStyle: {
-            ...styleApp.disable_shadow,
-            backgroundColor: colors.bg_app,
+            ...Style.disable_shadow,
+            backgroundColor: Colors.bg_app,
         },
 
     }

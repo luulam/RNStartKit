@@ -1,7 +1,7 @@
 import { Platform, Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
-const colors = {
+const Colors = {
     primary: '#edbbd0',
     secondary: '#B3D9CE',
     bg_app: 'white',
@@ -18,7 +18,7 @@ const colors = {
     black: '#0f0f0f'
 };
 
-const constants = {
+const Constants = {
     appWidth: width < height ? width : height,
     appHeight: width < height ? height : width,
     navBarHeight: (Platform.OS === 'ios') ? 42 : 42,
@@ -41,7 +41,7 @@ const constants = {
     btnHeight: 38,
 };
 
-const styleApp = {
+const Style = {
     disable_shadow: {
         shadowOffset: { width: 0, height: 0 },
         shadowRadius: 0,
@@ -59,7 +59,7 @@ const styleApp = {
 };
 
 export {
-    colors,
-    constants,
-    styleApp
+    Colors,
+    Constants,
+    Style
 };

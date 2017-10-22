@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 import { Header, Icon } from '../components';
-import { constants } from '../configs';
-import { icon } from '../assets';
-class Home extends Component {
+import { Constants } from '../configs';
+import { Icons } from '../assets';
+class Camera extends Component {
+
     render() {
         const { routeName } = this.props.navigation.state;
         return (
@@ -14,29 +15,28 @@ class Home extends Component {
             >
                 <Header
                     title={routeName}
-                    left={<Icon name={icon.camera}
-                        onPress={() => this.props.navigation.navigate('Camera')} />}
                 >
                     <Icon
-                        name={icon.message}
-                        onPress={() => this.props.navigation.navigate('Message')} />
+                        name={Icons.back_right}
+                        onPress={() => this.props.navigation.navigate('Home')} />
                 </Header>
+
             </View>
         );
     }
 }
 
+Camera.propTypes = {
+    navigation: PropTypes.any
+};
+
 const styles = StyleSheet.create({
     containers: {
-        paddingTop: constants.statusBarHeight,
+        paddingTop: Constants.statusBarHeight,
         flex: 1
     }
 });
 
-Home.propTypes = {
-    navigation: PropTypes.any
-};
-
 const mapStateToProps = () => ({});
 const mapDispatchToProps = () => ({});
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Camera);

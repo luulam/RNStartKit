@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, StyleSheet } from 'react-native';
-import { colors, constants } from '../../configs';
+import { Colors, Constants } from '../../configs';
 
 /**
  * 
@@ -30,7 +30,7 @@ let TextApp = ({
         numberOfLines={numberOfLines}
         style={[style, {
             textAlign: align,
-            color: disable ? colors.disable : color,
+            color: disable ? Colors.disable : color,
             fontSize,
             fontWeight: bold ? 'bold' : undefined,
             fontStyle: italic ? 'italic' : undefined,
@@ -65,8 +65,8 @@ TextApp.propTypes = {
 };
 
 TextApp.defaultProps = {
-    color: colors.text,
-    fontSize: constants.font.nomal,
+    color: Colors.text,
+    fontSize: Constants.font.nomal,
     numberOfLines: undefined,
     ellipsizeMode: 'tail',
     style: styles.constant,

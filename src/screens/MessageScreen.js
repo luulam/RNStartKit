@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 import { Header, Icon } from '../components';
-import { constants } from '../configs';
-import { icon } from '../assets';
+import { Constants } from '../configs';
+import { Icons } from '../assets';
 
 class Message extends Component {
     render() {
@@ -17,7 +17,7 @@ class Message extends Component {
                     title={routeName}
                     left={
                         <Icon
-                            name={icon.back}
+                            name={Icons.back}
                             onPress={() => this.props.navigation.navigate('Home')} />
                     }
                 />
@@ -28,7 +28,7 @@ class Message extends Component {
 
 const styles = StyleSheet.create({
     containers: {
-        paddingTop: constants.statusBarHeight,
+        paddingTop: Constants.statusBarHeight,
         flex: 1
     }
 });
