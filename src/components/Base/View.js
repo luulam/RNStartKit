@@ -1,48 +1,98 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
-
+import { View } from 'react-native';
+import { Constants, Configs } from '../../configs';
 /**
  * 
  * @param 
  * @return <View/>
  */
+class ViewApp extends Component {
+    _name = 'ViewApp'
+    _countdown = undefined
+    _timeCountTouch = 0
+    _locationX = undefined
+    _locationY = undefined
 
-let ViewApp = ({
-    style,
-    disable,
-    children,
-    onPress,
-    onLongPress,
-    delayLongPress,
-    disTouch,
-    activeOpacity
-}) => {
-    return (
-        <TouchableOpacity
-            activeOpacity={activeOpacity}
-            style={style}
-            disabled={disTouch}
-            onPress={onPress}
-            onLongPress={onLongPress}
-            delayLongPress={delayLongPress}
-        >
-            {children}
-            <View style={disable ? styles.containersDisable : null} />
-        </TouchableOpacity>
-    );
-};
+    onHandleTouch = {
+        onStartShouldSetResponder: () => !this.props.disTouch,
+        onResponderTerminationRequest: (event) => { },
+        onResponderGrant: (event) => {
+            const { onLongPress, delayLongPress } = this.props;
 
-let styles = StyleSheet.create({
-    containersDisable: {
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-        backgroundColor: 'rgba(255, 255, 255, .8)'
+            this._name.setNativeProps({ opacity: Constants.opacity });
+
+            this._locationX = event.nativeEvent.pageX;
+            this._locationY = event.nativeEvent.pageY;
+
+            this._countdown = setInterval(() => {
+                if (delayLongPress === this._timeCountTouch) {
+                    onLongPress && onLongPress();
+                    this._timeCountTouch = 0;
+                    clearInterval(this._countdown);
+                    this._countdown = undefined;
+                }
+                this._timeCountTouch = (this._timeCountTouch + 10);
+            }, 10);
+        },
+        onResponderMove: (event) => { },
+        onResponderRelease: (event) => {
+            const { onPress, onSwipeLeft, onSwipeRight } = this.props;
+            const { _locationX, _locationY } = this;
+            const handleReset = () => {
+                this._timeCountTouch = 0;
+                clearInterval(this._countdown);
+            };
+
+            this._name.setNativeProps({ opacity: 1 });
+
+            // check swipe
+            const { pageX } = event.nativeEvent;
+
+            if (_locationX !== undefined && _locationY !== undefined) {
+                console.log(_locationX, pageX, pageX - _locationX);
+                if (pageX - _locationX > Configs.ranger_Swipe) {
+                    onSwipeRight && onSwipeRight(pageX - _locationX);
+                    handleReset();
+                    return;
+                }
+                if (pageX - _locationX < -Configs.ranger_Swipe) {
+                    onSwipeLeft && onSwipeLeft(pageX - _locationX);
+                    handleReset();
+                    return;
+                }
+            }
+
+            // check press
+            if (this._countdown !== undefined && this._timeCountTouch !== undefined) {
+                console.log('onPress');
+                onPress && onPress();
+            }
+            handleReset();
+        },
+        onResponderTerminate: (event) => { }
     }
-});
+
+
+    render() {
+        const { style,
+            disable,
+            children
+         } = this.props;
+        return (
+            <View
+                ref={component => { this._name = component; }}
+                {...this.onHandleTouch}
+                {...this.props}
+
+
+                style={[style, { opacity: disable ? 0.2 : 1 }]}
+            >
+                {children}
+            </View>
+        );
+    }
+}
 
 ViewApp.propTypes = {
     disable: PropTypes.bool,
@@ -51,7 +101,8 @@ ViewApp.propTypes = {
 
 ViewApp.defaultProps = {
     disable: false,
-    disTouch: true
+    disTouch: true,
+    delayLongPress: Configs.longPress
 };
 
 
