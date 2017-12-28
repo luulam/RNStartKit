@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { Header, Icon } from '../components';
-import { Constants } from '../configs';
+import { BaseStyles } from '../theme';
 import { Icons } from '../assets';
+
 class Camera extends Component {
 
     render() {
         const { routeName } = this.props.navigation.state;
         return (
             <View
-                style={styles.containers}
+                style={BaseStyles.screen.mainContainer}
             >
                 <Header
                     title={routeName}
@@ -30,13 +31,4 @@ Camera.propTypes = {
     navigation: PropTypes.any
 };
 
-const styles = StyleSheet.create({
-    containers: {
-        paddingTop: Constants.statusBarHeight,
-        flex: 1
-    }
-});
-
-const mapStateToProps = () => ({});
-const mapDispatchToProps = () => ({});
-export default connect(mapStateToProps, mapDispatchToProps)(Camera);
+export default connect(null, null)(Camera);

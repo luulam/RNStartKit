@@ -9,5 +9,6 @@ export default {
     noti: 'ios-notifications-outline',
     camera: 'ios-camera-outline',
     send: 'ios-send-outline',
-    message: 'ios-chatbubbles-outline'
+    message: 'ios-chatbubbles-outline',
+    error: 'ios-bug-outline'
 };

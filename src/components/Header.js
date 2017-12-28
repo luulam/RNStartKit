@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import { Text, Icon } from './';
-import { Constants, Style } from '../configs';
+import { Metrics, Fonts, BaseStyles, Colors } from '../theme';
 import { Icons } from '../assets';
 
 /**
@@ -21,7 +21,7 @@ let HeaderApp = ({
 }) => {
     return (
         <View
-            style={style}
+            style={[styles.containers, style]}
         >
             <View
                 style={styles.containerRow}
@@ -45,7 +45,7 @@ let HeaderApp = ({
                     style={styles.containerCenter}
                     align={'center'}
                     text={title}
-                    fontSize={Constants.font.header}
+                    fontSize={Fonts.size.h3}
                     bold
                 />
                 : null}
@@ -56,12 +56,13 @@ let HeaderApp = ({
 
 let styles = StyleSheet.create({
     containers: {
-        paddingHorizontal: Constants.padHor,
-        height: Constants.navBarHeight,
+        paddingHorizontal: Metrics.padHor,
+        height: Metrics.navBarHeight,
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        ...Style.shadow
+        backgroundColor: Colors.header,
+        ...BaseStyles.shadow
     },
     containerRow: {
         flexDirection: 'row'
@@ -84,7 +85,7 @@ HeaderApp.propTypes = {
 };
 
 HeaderApp.defaultProps = {
-    style: styles.containers
+
 };
 
 

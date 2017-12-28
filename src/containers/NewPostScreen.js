@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { } from '../components';
-import { Constants } from '../configs';
+import { BaseStyles } from '../theme';
 
 class NewPost extends Component {
     render() {
         return (
             <View
-                style={styles.containers}
+                style={BaseStyles.screen.mainContainer}
              />
         );
     }
 }
-
-const styles = StyleSheet.create({
-    containers: {
-        paddingTop: Constants.statusBarHeight,
-        flex: 1
-    }
-});
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = () => ({});

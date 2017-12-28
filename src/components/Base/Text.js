@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, StyleSheet } from 'react-native';
-import { Colors, Constants } from '../../configs';
+import { Text } from 'react-native';
+import { Colors, Fonts } from '../../theme';
 
 /**
  * 
@@ -42,12 +42,6 @@ let TextApp = ({
     </Text>;
 };
 
-let styles = StyleSheet.create({
-    containers: {
-
-    }
-});
-
 TextApp.propTypes = {
     style: PropTypes.any,
     text: PropTypes.string,
@@ -65,11 +59,9 @@ TextApp.propTypes = {
 };
 
 TextApp.defaultProps = {
+    ...Fonts.style.normal,
     color: Colors.text,
-    fontSize: Constants.font.nomal,
     numberOfLines: undefined,
-    ellipsizeMode: 'tail',
-    style: styles.constant,
     align: 'left'
 };
 

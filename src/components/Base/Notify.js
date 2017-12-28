@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 import { Text } from '../';
-import { Colors, Constants, Style } from '../../configs';
-
+import { Colors, Metrics, BaseStyles } from '../../theme';
 
 class Notify extends Component {
     static propTypes = {
@@ -39,7 +38,7 @@ class Notify extends Component {
 
 const styles = StyleSheet.create({
     containers: {
-        bottom: Constants.padVer * 2,
+        bottom: Metrics.padVer * 2,
         left: 0,
         right: 0,
         justifyContent: 'center',
@@ -47,14 +46,14 @@ const styles = StyleSheet.create({
     },
     border: {
         backgroundColor: Colors.access,
-        padding: Constants.pad,
-        marginBottom: Constants.padVer,
-        marginHorizontal: Constants.padHor * 2,
-        height: Constants.btnHeight,
-        borderRadius: Constants.btnHeight / 2,
+        padding: Metrics.pad,
+        marginBottom: Metrics.padVer,
+        marginHorizontal: Metrics.padHor * 2,
+        height: Metrics.btnHeight,
+        borderRadius: Metrics.btnHeight / 2,
         alignItems: 'center',
         justifyContent: 'center',
-        ...Style.shadow
+        ...BaseStyles.shadow
     },
     text: {
         color: Colors.text_light

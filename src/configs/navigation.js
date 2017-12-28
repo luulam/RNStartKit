@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import { BaseStyles, Colors, Metrics } from '../theme';
 import { Icon } from '../components';
 //all screen
-import Splash from '../screens/SplashScreen';
-import Home from '../screens/HomeScreen';
-import Camera from '../screens/CameraScreen';
-import Message from '../screens/MessageScreen';
-import NewPost from '../screens/NewPostScreen';
-import Notification from '../screens/NotificationScreen';
-import Search from '../screens/SearchScreen';
-import Profile from '../screens/ProfileScreen';
-import { Colors, Constants, Style } from '../configs';
+import Splash from '../containers/SplashScreen';
+import Home from '../containers/HomeScreen';
+import Camera from '../containers/CameraScreen';
+import Message from '../containers/MessageScreen';
+import NewPost from '../containers/NewPostScreen';
+import Notification from '../containers/NotificationScreen';
+import Search from '../containers/SearchScreen';
+import Profile from '../containers/ProfileScreen';
 import { Icons } from '../assets';
 
 const getIconTab = (name) => ({ tintColor }) => (
@@ -104,9 +104,9 @@ const Navigation = StackNavigator(
                         showLabel: false,
                         showIcon: true,
                         style: {
-                            ...Style.disable_shadow,
+                            ...BaseStyles.disable_shadow,
                             backgroundColor: Colors.white,
-                            height: Constants.navBarHeight
+                            height: Metrics.navBarHeight
                         }
                     },
 
@@ -116,16 +116,15 @@ const Navigation = StackNavigator(
 
     },
     {
-        initialRouteName: 'TabMain',
+        initialRouteName: 'Splash',
         headerMode: 'none',
         cardStyle: {
-            ...Style.disable_shadow,
-            backgroundColor: Colors.bg_app,
+            ...BaseStyles.disable_shadow,
+            backgroundColor: Colors.background,
         },
 
     }
 );
-
 const mapStateToProps = (state) => ({ nav: state.nav });
 
 export default connect(mapStateToProps)(Navigation);

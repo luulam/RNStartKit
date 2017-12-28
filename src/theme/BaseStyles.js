@@ -9,7 +9,8 @@ const BaseStyles = {
   screen: {
     mainContainer: {
       flex: 1,
-      backgroundColor: Colors.transparent
+      backgroundColor: Colors.transparent,
+      paddingTop: Metrics.statusBarHeight
     },
     backgroundImage: {
       position: 'absolute',

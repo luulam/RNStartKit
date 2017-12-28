@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Text } from '../';
-import { Colors, Constants, Style } from '../../configs';
+import { Metrics, Colors, BaseStyles, Fonts } from '../../theme';
 
 /**
  * 
@@ -23,13 +23,13 @@ let ButtonApp = ({
     return (
         <TouchableOpacity
             disabled={disable}
-            activeOpacity={Constants.opacity}
+            activeOpacity={Metrics.opacity}
             onPress={onPress}
             style={[
                 styles.containers,
                 {
-                    borderRadius: border ? Constants.btnHeight / 2 : undefined,
-                    borderWidth: border ? backgroundColor !== Colors.white ? 0 : Constants.border : 0,
+                    borderRadius: border ? Metrics.btnHeight / 2 : undefined,
+                    borderWidth: border ? backgroundColor !== Colors.white ? 0 : Metrics.border : 0,
                     borderColor: Colors.border,
                     backgroundColor,
                     width
@@ -38,7 +38,7 @@ let ButtonApp = ({
             <Text
                 color={backgroundColor !== Colors.white ? Colors.white : Colors.text}
                 text={title}
-                fontSize={Constants.font.nomal} />
+                fontSize={Fonts.size.medium} />
             {children}
         </TouchableOpacity>
     );
@@ -46,13 +46,13 @@ let ButtonApp = ({
 
 let styles = StyleSheet.create({
     containers: {
-        paddingHorizontal: Constants.padHor,
-        height: Constants.btnHeight,
+        paddingHorizontal: Metrics.padHor,
+        height: Metrics.btnHeight,
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'flex-start',
         flexDirection: 'row',
-        ...Style.shadow
+        ...BaseStyles.shadow
     },
     containersLeft: {
         flexDirection: 'row'

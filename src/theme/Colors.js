@@ -1,5 +1,6 @@
 const colors = {
-  background: '#1F0808',
+  background: '#ffffff',
+  header:'#ffffff',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',
@@ -13,9 +14,9 @@ const colors = {
   ember: 'rgba(164, 0, 48, 0.5)',
   fire: '#e73536',
   drawer: 'rgba(30, 30, 29, 0.95)',
-  border: '#483F53',
+  border: 'gray',
   banner: '#5F3E63',
-  text: '#E0D7E5'
+  text: '#191919'
 };
 
 export default colors;

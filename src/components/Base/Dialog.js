@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { StyleSheet, BackHandler } from 'react-native';
 import { Text, Button, View } from '../';
-import { Constants, Colors } from '../../configs';
+import { Metrics, Colors, Fonts } from '../../theme';
 import { Strings } from '../../assets';
 import { actions } from '../../redux/AppRedux';
 
@@ -25,7 +25,7 @@ class Dialog extends Component {
     componentWillUpdate(nextProps, nextState) {
         if (nextProps.dialog && nextProps.dialog.show) {
             BackHandler.addEventListener('hardwareBackPressDialog', () => {
-                this.props.hideDialog()
+                this.props.hideDialog();
             });
         } else {
             BackHandler.addEventListener('hardwareBackPressDialog');
@@ -37,7 +37,7 @@ class Dialog extends Component {
         return (<View style={styles.containersButton}>
             {dialog.button.map((v, i) => <Button
                 key={i}
-                width={Constants.appWidth / 3}
+                width={Metrics.appWidth / 3}
                 title={v.title}
                 onPress={v.onPress}
                 style={styles.button}
@@ -65,7 +65,7 @@ class Dialog extends Component {
                         bold
                         upperCase
                         style={styles.text}
-                        fontSize={Constants.font.dialog} />
+                        fontSize={Fonts.size.h2} />
                     <View style={styles.lineCenter} />
                     <Text
                         text={dialog.message}
@@ -93,19 +93,19 @@ const styles = StyleSheet.create({
     },
     containersBackground: {
         backgroundColor: 'white',
-        marginTop: Constants.statusBarHeight * 2,
-        paddingVertical: Constants.padVer,
-        paddingHorizontal: Constants.padHor,
-        borderRadius: Constants.borderRadius
+        marginTop: Metrics.statusBarHeight * 2,
+        paddingVertical: Metrics.padVer,
+        paddingHorizontal: Metrics.padHor,
+        borderRadius: Metrics.borderRadius
     },
     containersButton: {
-        marginTop: Constants.padVer,
+        marginTop: Metrics.padVer,
         flexDirection: 'row',
         justifyContent: 'space-around'
     },
     lineCenter: {
-        marginTop: Constants.padVer,
-        marginBottom: Constants.padVer / 2,
+        marginTop: Metrics.padVer,
+        marginBottom: Metrics.padVer / 2,
         backgroundColor: Colors.access,
         height: 0.5,
         alignSelf: 'stretch'
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     button: {
-        marginLeft: Constants.padHor / 3,
+        marginLeft: Metrics.padHor / 3,
     }
 });
 

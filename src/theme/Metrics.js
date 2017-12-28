@@ -13,9 +13,9 @@ const metrics = {
   section: 25,
   borderRadius: 6,
   horizontalLineHeight: 1,
-  screenWidth: width < height ? width : height,
-  screenHeight: width < height ? height : width,
-  navBarHeight: (Platform.OS === 'ios') ? 64 : 54,
+  appWidth: width < height ? width : height,
+  appHeight: width < height ? height : width,
+  navBarHeight: (Platform.OS === 'ios') ? 56 : 48,
   statusBarHeight: Platform.OS === 'ios' ? 20 : 20,
   btnRadius: 4,
   btnHeight: 38,
@@ -32,6 +32,6 @@ const metrics = {
     large: 60,
     logo: 200
   }
-}
+};
 
 export default metrics;

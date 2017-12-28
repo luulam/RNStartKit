@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TabNavigator, TabBarTop } from 'react-navigation';
 import { View } from 'react-native';
-import { Colors, Constants, Style } from '../configs';
+import { Colors, BaseStyles, Metrics } from '../theme';
 
 class Top extends Component {
     render() {
@@ -55,16 +55,16 @@ const ViewContent = TabNavigator({
         tabBarComponent: TabBarTop,
         tabBarPosition: 'top',
         tabBarOptions: {
-            activeTintColor: Colors.black,
+            activeTintColor: Colors.text,
             inactiveTintColor: Colors.border,
             showLabel: true,
             indicatorStyle: {
                 backgroundColor: Colors.black
             },
             style: {
-                ...Style.shadow,
-                backgroundColor: Colors.white,
-                height: Constants.navBarHeight
+                ...BaseStyles.shadow,
+                backgroundColor: Colors.header,
+                height: Metrics.navBarHeight
             }
         }
 

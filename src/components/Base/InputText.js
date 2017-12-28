@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput, View, StyleSheet, Platform } from 'react-native';
-import { Colors, Constants } from '../../configs';
+import { Colors, Metrics, Fonts } from '../../theme';
 import { Text, Icon } from '../';
 
 export default class InputText extends Component {
@@ -52,12 +52,12 @@ export default class InputText extends Component {
                 <Text
                     text={hint}
                     color={Colors.access}
-                    fontSize={Constants.font.sub}
+                    fontSize={Fonts.size.small}
                 />
                 {maxLength
                     ? <Text
                         color={Colors.access}
-                        fontSize={Constants.font.sub}
+                        fontSize={Fonts.size.small}
                         text={`${value.length}/${maxLength}`} />
                     : null}
             </View>
@@ -71,12 +71,11 @@ export default class InputText extends Component {
             ? <View
                 style={[
                     styles.removeAll,
-                    { top: this.props.hintTop ? Constants.font.sub + Constants.padVer : 0 }
+                    { top: this.props.hintTop ? Fonts.size.small + Metrics.padVer : 0 }
                 ]}
             >
                 <Icon
                     onPress={() => this._handRemoveAllText()}
-                    size={Constants.font.nomal}
                     name="ios-close-circle-outline"
                 />
             </View>
@@ -87,7 +86,7 @@ export default class InputText extends Component {
         let { error } = this.state;
         return error
             ? <Text
-                size={Constants.font.sub}
+                size={Fonts.size.small}
                 color={Colors.error}
                 text={error} />
             : null;
@@ -132,9 +131,8 @@ export default class InputText extends Component {
                         color: color,
                         fontWeight: bold ? 'bold' : undefined,
                         fontStyle: italic ? 'italic' : undefined,
-                        fontSize: Constants.font.nomal,
+                        fontSize: Fonts.size.regular,
                         ...style,
-                        paddingRight: Constants.font.nomal,
                         height: height
                     }}
                     onContentSizeChange={this._onContentSizeChange}
@@ -193,13 +191,13 @@ export default class InputText extends Component {
 const styles = StyleSheet.create({
     containers: {
         flex: 1,
-        paddingHorizontal: Constants.padHor,
-        paddingVertical: Constants.padVer,
+        paddingHorizontal: Metrics.padHor,
+        paddingVertical: Metrics.padVer,
         justifyContent: 'center'
     },
     borderBottom: {
         borderBottomColor: Colors.border,
-        borderBottomWidth: Constants.border
+        borderBottomWidth: Metrics.border
     },
     containersHint: {
         flexDirection: 'row',
@@ -207,7 +205,7 @@ const styles = StyleSheet.create({
     },
     removeAll: {
         position: 'absolute',
-        right: Constants.padHor,
+        right: Metrics.padHor,
         bottom: 0,
         justifyContent: 'center'
     }

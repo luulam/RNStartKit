@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import { Constants, Configs } from '../../configs';
+import { Configs } from '../../configs';
+import { Metrics } from '../../theme';
 /**
  * 
  * @param 
  * @return <View/>
  */
+
 class ViewApp extends Component {
     _name = 'ViewApp'
     _countdown = undefined
@@ -20,7 +22,7 @@ class ViewApp extends Component {
         onResponderGrant: (event) => {
             const { onLongPress, delayLongPress } = this.props;
 
-            this._name.setNativeProps({ opacity: Constants.opacity });
+            this._name.setNativeProps({ opacity: Metrics.opacity });
 
             this._locationX = event.nativeEvent.pageX;
             this._locationY = event.nativeEvent.pageY;
@@ -102,7 +104,7 @@ ViewApp.propTypes = {
 ViewApp.defaultProps = {
     disable: false,
     disTouch: true,
-    delayLongPress: Configs.longPress
+    // delayLongPress: Configs.longPress
 };
 
 

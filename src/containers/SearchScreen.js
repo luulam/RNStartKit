@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, StyleSheet, Keyboard } from 'react-native';
+import { View, Keyboard } from 'react-native';
 import { Header, Icon, InputText, TabSearch } from '../components';
-import { Constants } from '../configs';
+import { BaseStyles } from '../theme';
 import { Icons } from '../assets';
 
 class Search extends Component {
@@ -49,7 +49,7 @@ class Search extends Component {
     render() {
         return (
             <View
-                style={styles.containers}
+                style={BaseStyles.screen.mainContainer}
             >
                 {this._renderHeader()}
                 {this._renderContentSearch()}
@@ -65,13 +65,6 @@ class Search extends Component {
         }
     }
 }
-
-const styles = StyleSheet.create({
-    containers: {
-        paddingTop: Constants.statusBarHeight,
-        flex: 1
-    }
-});
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = () => ({});
