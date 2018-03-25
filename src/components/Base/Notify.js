@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, StyleSheet } from 'react-native';
-import { Text } from '../';
-import { Colors, Metrics, BaseStyles } from '../../theme';
+import { StyleSheet } from 'react-native';
+import { View, Text } from '../../Components'
+import { Colors, Metrics, BaseStyles } from '../../Theme';
 
 class Notify extends Component {
     static propTypes = {

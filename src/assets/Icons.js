@@ -1,4 +1,3 @@
-
 export default {
     back: 'ios-arrow-back-outline',
     back_right: 'ios-arrow-forward-outline',

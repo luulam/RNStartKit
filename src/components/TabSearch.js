@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TabNavigator, TabBarTop } from 'react-navigation';
-import { View } from 'react-native';
-import { Colors, BaseStyles, Metrics } from '../theme';
+import { View } from '../Components';
+import { Colors, BaseStyles, Metrics } from '../Theme'
 
 class Top extends Component {
     render() {

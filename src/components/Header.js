@@ -1,15 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet } from 'react-native';
-import { Text, Icon } from './';
-import { Metrics, Fonts, BaseStyles, Colors } from '../theme';
-import { Icons } from '../assets';
-
-/**
- * 
- * @param 
- * @return <View/>
- */
+import { StyleSheet } from 'react-native';
+import { Text, Icon, View } from '../Components';
+import { Fonts, BaseStyles, Colors, Metrics } from '../Theme'
+import { Icons } from '../Assets'
 
 let HeaderApp = ({
     style,
@@ -87,6 +81,5 @@ HeaderApp.propTypes = {
 HeaderApp.defaultProps = {
 
 };
-
 
 export default HeaderApp;

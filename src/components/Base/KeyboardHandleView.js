@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Keyboard, View } from 'react-native';
-import { Constants } from '../../configs';
-import { platform } from '../../helper';
+import { Keyboard } from 'react-native';
+import { View } from '../../Components'
+import { Utils } from '../../Helper';
+import Consts from '../../Configs/Consts'
+
 class KeyboardHandleView extends Component {
 
     constructor(props) {
@@ -13,8 +15,8 @@ class KeyboardHandleView extends Component {
     }
 
     componentWillMount() {
-        const updateListener = !platform ? 'keyboardDidShow' : 'keyboardWillShow';
-        const resetListener = !platform ? 'keyboardDidHide' : 'keyboardWillHide';
+        const updateListener = Utils.isIos() ? 'keyboardDidShow' : 'keyboardWillShow';
+        const resetListener = Utils.isIos() ? 'keyboardDidHide' : 'keyboardWillHide';
 
         this._listeners = [
             Keyboard.addListener(updateListener, this._keyboardDidShow),
@@ -39,7 +41,11 @@ class KeyboardHandleView extends Component {
 
     _keyboardDidShow = (event) => {
         const { hasTab } = this.props;
-        this.setState({ heightKeyBoard: hasTab ? event.endCoordinates.height - Constants.navBarHeight : event.endCoordinates.height });
+        this.setState({
+            heightKeyBoard: hasTab
+                ? event.endCoordinates.height - Consts.navBarHeight
+                : event.endCoordinates.height
+        });
     }
 
     _keyboardDidHide = (event) => {

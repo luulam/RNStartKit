@@ -5,7 +5,7 @@ import { createReducer, createActions } from 'reduxsauce'
 const { Types, Creators } = createActions({
     addNotify: ['id', 'title'],
     removeNotify: ['id'],
-    putNotify: ['title', 'name'],
+    putNotify: ['title'],
     showDialog: ['title', 'message', 'button'],
     hideDialog: null,
 

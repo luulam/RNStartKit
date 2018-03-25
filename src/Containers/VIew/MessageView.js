@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { View } from 'react-native';
-import { Header, Icon } from '../components';
-import { BaseStyles } from '../theme';
-import { Icons } from '../assets';
+import { View, Header, Icon } from '../../Components'
+import { BaseStyles } from '../../Theme'
+import { Icons } from '../../Assets'
 
-class Message extends Component {
+export default class Message extends Component {
     render() {
         const { routeName } = this.props.navigation.state;
         return (
@@ -25,12 +23,3 @@ class Message extends Component {
         );
     }
 }
-
-const mapStateToProps = () => ({});
-const mapDispatchToProps = () => ({});
-
-Message.propTypes = {
-    navigation: PropTypes.any
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Message);

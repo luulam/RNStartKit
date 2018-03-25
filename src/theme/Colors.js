@@ -1,6 +1,6 @@
-const colors = {
+export default {
   background: '#ffffff',
-  header:'#ffffff',
+  header: '#ffffff',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',
@@ -18,5 +18,3 @@ const colors = {
   banner: '#5F3E63',
   text: '#191919'
 };
-
-export default colors;

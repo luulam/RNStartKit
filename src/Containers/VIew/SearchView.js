@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { View, Keyboard } from 'react-native';
-import { Header, Icon, InputText, TabSearch } from '../components';
-import { BaseStyles } from '../theme';
-import { Icons } from '../assets';
+import { Keyboard } from 'react-native';
+import { Header, Icon, InputText, TabSearch, View } from '../../Components'
+import { Icons } from '../../Assets';
+import { BaseStyles } from '../../Theme'
 
-class Search extends Component {
+export default class Search extends Component {
     constructor(props) {
         super(props);
         this._inputSearch = null;
@@ -65,8 +64,3 @@ class Search extends Component {
         }
     }
 }
-
-const mapStateToProps = () => ({});
-const mapDispatchToProps = () => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Search);

@@ -1,6 +1,5 @@
 import Realm from 'realm';
 
-
 let UserSchema = {
     name: 'User',
     properties: {
@@ -13,7 +12,7 @@ let UserSchema = {
 };
 
 export default new Realm({
-    // path: Realm.defaultPath,
-    // schemaVersion: Realm.schemaVersion(Realm.defaultPath),
+    path: Realm.defaultPath,
+    schemaVersion: Realm.schemaVersion(Realm.defaultPath),
     schema: [UserSchema]
 });

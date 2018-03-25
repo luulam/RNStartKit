@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { StyleSheet, BackHandler } from 'react-native';
-import { Text, Button, View } from '../';
-import { Metrics, Colors, Fonts } from '../../theme';
-import { Strings } from '../../assets';
-import { actions } from '../../redux/AppRedux';
+import { Text, Button, View } from '../../Components'
+import { Metrics, Colors, Fonts } from '../../Theme';
+import { Strings } from '../../Assets'
+import { AppCreators } from '../../Redux/AppRedux'
 
 class Dialog extends Component {
 
@@ -124,7 +124,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    hideDialog: () => actions.hideDialog(dispatch)
+    hideDialog: () => dispatch(AppCreators.hideDialog())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dialog);

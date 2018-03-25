@@ -1,14 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, StyleSheet } from 'react-native';
-import { Colors, Metrics } from '../../theme';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Icons } from '../../assets';
-
-/**
- * 
- * @return <Text/>
- */
+import { Colors, Metrics } from '../../Theme';
+import { Icons } from '../../Assets'
 
 let IconApp = ({
     style,

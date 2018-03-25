@@ -1,14 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Metrics, Colors, BaseStyles, Fonts } from '../../Theme'
 import { Text } from '../';
-import { Metrics, Colors, BaseStyles, Fonts } from '../../theme';
-
-/**
- * 
- * @param 
- * @return <View/>
- */
 
 let ButtonApp = ({
     style,
@@ -74,6 +68,5 @@ ButtonApp.defaultProps = {
     border: true,
     backgroundColor: Colors.access
 };
-
 
 export default ButtonApp;

@@ -1,13 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
-import { Colors, Fonts } from '../../theme';
-
-/**
- * 
- * @param ellipsizeMode {'head','middle','tail'} 
- * @return <Text/>
- */
+import { Colors, Fonts } from '../../Theme';
 
 let TextApp = ({
     text,
@@ -59,7 +53,6 @@ TextApp.propTypes = {
 };
 
 TextApp.defaultProps = {
-    ...Fonts.style.normal,
     color: Colors.text,
     numberOfLines: undefined,
     align: 'left'

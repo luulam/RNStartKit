@@ -1,11 +1,8 @@
-import Fonts from './Fonts';
-import Metrics from './Metrics';
-import Colors from './Colors';
+import Metrics from './Metrics'
+import Colors from './Colors'
+import Fonts from './Fonts'
 
-// This file is for a reusable grouping of Theme items.
-// Similar to an XML fragment layout in Android
-
-const BaseStyles = {
+export default {
   screen: {
     mainContainer: {
       flex: 1,
@@ -62,5 +59,3 @@ const BaseStyles = {
     elevation: 4
   }
 };
-
-export default BaseStyles;

@@ -2,7 +2,7 @@
  * @dateCreate: moment('LLL')
  * 
  */
-import { realm } from '../../configs';
+import Realm from '../../Configs/Realm';
 
 class User {
     constructor(lastName, firstName, language, email, accessToken) {
@@ -15,22 +15,22 @@ class User {
 }
 
 const get = () => {
-    return realm.objects('User');
+    return Realm.objects('User');
 };
 
 const create = ({ lastName, firstName, language = 'en', email = '', accessToken = '' }) => {
     if (get().length === 0) {
-        realm.beginTransaction();
-        realm.create('User', new User(lastName, firstName, language, email, accessToken));
-        realm.commitTransaction();
+        Realm.beginTransaction();
+        Realm.create('User', new User(lastName, firstName, language, email, accessToken));
+        Realm.commitTransaction();
     } else {
-        realm.beginTransaction();
+        Realm.beginTransaction();
         get()[0].lastName = lastName;
         get()[0].firstName = firstName;
         get()[0].language = language;
         get()[0].email = email;
         get()[0].accessToken = accessToken;
-        realm.commitTransaction();
+        Realm.commitTransaction();
     }
 };
 

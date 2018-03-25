@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { View } from 'react-native';
-import { Header, Icon } from '../components';
-import { BaseStyles } from '../theme';
-import { Icons } from '../assets';
+import { View, Header, Icon } from '../../Components'
+import { BaseStyles } from '../../Theme'
+import { Icons } from '../../Assets'
 
-class Camera extends Component {
-
+export default class Camera extends Component {
     render() {
         const { routeName } = this.props.navigation.state;
         return (
@@ -21,14 +17,7 @@ class Camera extends Component {
                         name={Icons.back_right}
                         onPress={() => this.props.navigation.navigate('Home')} />
                 </Header>
-
             </View>
         );
     }
 }
-
-Camera.propTypes = {
-    navigation: PropTypes.any
-};
-
-export default connect(null, null)(Camera);

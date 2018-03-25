@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
-import { BaseStyles, Colors, Metrics } from '../theme';
-import { Icon } from '../components';
+import { Icon } from '../Components'
+import { BaseStyles, Colors, Metrics, } from '../Theme';
+import { Icons } from '../Assets'
 //all screen
-import Splash from '../containers/SplashScreen';
-import Home from '../containers/HomeScreen';
-import Camera from '../containers/CameraScreen';
-import Message from '../containers/MessageScreen';
-import NewPost from '../containers/NewPostScreen';
-import Notification from '../containers/NotificationScreen';
-import Search from '../containers/SearchScreen';
-import Profile from '../containers/ProfileScreen';
-import { Icons } from '../assets';
+import Splash from '../Containers/SplashContainer';
+import Home from '../Containers/HomeContainer';
+import Camera from '../Containers/CameraContainer';
+import Message from '../Containers/MessageContainer';
+import NewPost from '../Containers/NewPostContainer';
+import Notification from '../Containers/NotificationContainer';
+import Search from '../Containers/SearchContainer';
+import Profile from '../Containers/ProfileContainer';
 
 const getIconTab = (name) => ({ tintColor }) => (
     <Icon name={name} color={tintColor} disable />
@@ -113,7 +113,6 @@ const Navigation = StackNavigator(
                 }
             )
         }
-
     },
     {
         initialRouteName: 'Splash',
@@ -125,6 +124,7 @@ const Navigation = StackNavigator(
 
     }
 );
+
 const mapStateToProps = (state) => ({ nav: state.nav });
 
 export default connect(mapStateToProps)(Navigation);
