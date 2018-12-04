@@ -1,13 +1,13 @@
 export default {
-    back: 'ios-arrow-back-outline',
-    back_right: 'ios-arrow-forward-outline',
-    home: 'ios-home-outline',
-    search: 'ios-search-outline',
-    add: 'ios-add-circle-outline',
-    profile: 'ios-person-outline',
-    noti: 'ios-notifications-outline',
-    camera: 'ios-camera-outline',
-    send: 'ios-send-outline',
-    message: 'ios-chatbubbles-outline',
-    error: 'ios-bug-outline'
+    back: 'chevron-left',
+    back_right: 'chevron-right',
+    home: 'home',
+    search: 'search',
+    add: 'plus-circle',
+    profile: 'user-circle',
+    noti: 'bell',
+    camera: 'camera',
+    send: 'paper-plane',
+    message: 'comments',
+    error: 'exclamation-circle'
 };

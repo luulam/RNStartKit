@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import { createAppContainer, createStackNavigator, createMaterialTopTabNavigator, TabBarBottom } from 'react-navigation';
 import { Icon } from '../Components'
 import { BaseStyles, Colors, Metrics, } from '../Theme';
 import { Icons } from '../Assets'
@@ -18,15 +18,15 @@ const getIconTab = (name) => ({ tintColor }) => (
     <Icon name={name} color={tintColor} disable />
 );
 
-const Navigation = StackNavigator(
+const AppNavigator = createStackNavigator(
     {
         Splash: {
             screen: Splash
         },
         TabMain: {
-            screen: TabNavigator({
+            screen: createMaterialTopTabNavigator({
                 TabHome: {
-                    screen: TabNavigator({
+                    screen: createMaterialTopTabNavigator({
                         Camera: {
                             screen: Camera,
                             navigationOptions: {
@@ -124,7 +124,7 @@ const Navigation = StackNavigator(
 
     }
 );
-
+const AppContainer = createAppContainer(AppNavigator);
 const mapStateToProps = (state) => ({ nav: state.nav });
 
-export default connect(mapStateToProps)(Navigation);
+export default connect(mapStateToProps)(AppContainer);

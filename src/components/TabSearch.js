@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TabNavigator, TabBarTop } from 'react-navigation';
+import { createMaterialTopTabNavigator, createAppContainer,TabBarTop } from 'react-navigation';
 import { View } from '../Components';
 import { Colors, BaseStyles, Metrics } from '../Theme'
 
@@ -36,7 +36,7 @@ class Places extends Component {
     }
 }
 
-const ViewContent = TabNavigator({
+const ViewContent = createMaterialTopTabNavigator({
     Top: {
         screen: Top
     },
@@ -71,12 +71,12 @@ const ViewContent = TabNavigator({
 
     });
 
-
+const ViewContentContainer = createAppContainer(ViewContent);
 export default class TabSearch extends Component {
     render() {
         const { textSearch } = this.props;
         return (
-            <ViewContent screenProps={{ textSearch }} />
+            <ViewContentContainer screenProps={{ textSearch }} />
         );
     }
 }
