@@ -1,16 +1,30 @@
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SplashView from './View/SplashView';
+import PropTypes from 'prop-types'
+import styles from './Styles/SplashContainerStyles'
+import { View } from '../Components';
 
-const mapStateToProps = (state) => {
-    return {
+class Splash extends Component {
+    static defaultProps = { }
+    static propTypes = { }
 
+    componentDidMount() {
+        setTimeout(() => {
+            this.props.navigation.navigate('TabMain');
+        }, 1000);
     }
-};
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    };
+    render() {
+        return (
+            <View
+                style={styles.containers}
+            />
+        );
+    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SplashView);
+const mapStateToProps = (state) => { return {} };
+
+const mapDispatchToProps = (dispatch) => { return {} };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);

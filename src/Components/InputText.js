@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput, View, StyleSheet, Platform } from 'react-native';
-import { Colors, Metrics, Fonts } from '../../Theme';
-import { Text, Icon } from '../';
+import { Colors, Metrics, Fonts } from '../Theme';
+import Text from './Text'
+import Icon from './Icon'
 
 export default class InputText extends Component {
 

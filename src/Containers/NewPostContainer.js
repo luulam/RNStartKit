@@ -1,16 +1,20 @@
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import NewPostView from './View/NewPostView';
+import { View } from '../Components'
+import { BaseStyles } from '../Theme'
 
-const mapStateToProps = (state) => {
-    return {
-
+class NewPost extends Component {
+    render() {
+        return (
+            <View
+                style={BaseStyles.screen.mainContainer}
+            />
+        );
     }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewPostView);
+const mapStateToProps = (state) => { return {} };
+
+const mapDispatchToProps = (dispatch) => { return {} };
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewPost);

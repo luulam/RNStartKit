@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { createMaterialTopTabNavigator, createAppContainer,TabBarTop } from 'react-navigation';
-import { View } from '../Components';
+import { createMaterialTopTabNavigator, createAppContainer, TabBarTop } from 'react-navigation';
+import View from './View';
 import { Colors, BaseStyles, Metrics } from '../Theme'
 
 class Top extends Component {

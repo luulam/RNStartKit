@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Keyboard } from 'react-native';
-import { View } from '../../Components'
-import { Utils } from '../../Helper';
-import Consts from '../../Configs/Consts'
+import View from './View'
+import { Utils } from '../Helper';
+import Consts from '../Configs/Consts'
 
-class KeyboardHandleView extends Component {
+export default class KeyboardHandleView extends Component {
+    static propTypes = {
+        hasTab: PropTypes.bool
+    };
+    static defaultProps = {
+        hasTab: false
+    };
 
     constructor(props) {
         super(props);
@@ -52,13 +58,3 @@ class KeyboardHandleView extends Component {
         this.setState({ heightKeyBoard: 0 });
     }
 }
-
-KeyboardHandleView.propTypes = {
-    hasTab: PropTypes.bool
-};
-
-KeyboardHandleView.defaultProps = {
-    hasTab: false
-};
-
-export default KeyboardHandleView;

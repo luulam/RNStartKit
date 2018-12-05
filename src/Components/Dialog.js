@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { StyleSheet, BackHandler } from 'react-native';
-import { Text, Button, View } from '../../Components'
-import { Metrics, Colors, Fonts } from '../../Theme';
-import { Strings } from '../../Assets'
-import { AppCreators } from '../../Redux/AppRedux'
+
+import { Metrics, Colors, Fonts } from '../Theme';
+import { Strings } from '../Assets'
+import { AppCreators } from '../Redux/AppRedux'
+import Text from './Text'
+import Button from './Button'
+import View from './View'
 
 class Dialog extends Component {
-
     static propTypes = {
         dialog: PropTypes.object,
     }

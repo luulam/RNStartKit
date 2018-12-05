@@ -1,16 +1,20 @@
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProfileView from './View/ProfileView';
+import { View } from '../Components'
+import { BaseStyles } from '../Theme'
 
-const mapStateToProps = (state) => {
-    return {
-
+class Profile extends Component {
+    render() {
+        return (
+            <View
+                style={BaseStyles.screen.mainContainer}
+            />
+        );
     }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileView);
+const mapStateToProps = (state) => { return {} };
+
+const mapDispatchToProps = (dispatch) => { return {} };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

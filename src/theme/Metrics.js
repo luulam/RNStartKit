@@ -1,5 +1,5 @@
 import {Dimensions, Platform} from 'react-native';
-
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 const { width, height } = Dimensions.get('window');
 
 const metrics = {
@@ -15,7 +15,7 @@ const metrics = {
   appWidth: width < height ? width : height,
   appHeight: width < height ? height : width,
   navBarHeight: (Platform.OS === 'ios') ? 56 : 48,
-  statusBarHeight: Platform.OS === 'ios' ? 20 : 20,
+  statusBarHeight: width < height ? getStatusBarHeight() : 0,
   btnRadius: 4,
   btnHeight: 38,
   icons: {

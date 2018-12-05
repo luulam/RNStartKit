@@ -1,52 +1,68 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
-import { Text, Icon, View } from '../Components';
+
 import { Fonts, BaseStyles, Colors, Metrics } from '../Theme'
 import { Icons } from '../Assets'
+import Text from './Text'
+import Icon from './Icon'
+import View from './View'
 
-let HeaderApp = ({
-    style,
-    title,
-    children,
-    left,
-    backPress,
-    center
-}) => {
-    return (
-        <View
-            style={[styles.containers, style]}
-        >
+export default class HeaderApp extends Component {
+    static propTypes = {
+        style: PropTypes.any,
+        title: PropTypes.string,
+        children: PropTypes.any,
+        left: PropTypes.any,
+        backPress: PropTypes.func,
+        center: PropTypes.string
+    };
+    static defaultProps = {}
+
+    render () {
+        const {
+            style,
+            title,
+            children,
+            left,
+            backPress,
+            center
+        } =this.props
+        return (
             <View
-                style={styles.containerRow}
+                style={[styles.containers, style]}
             >
-                {backPress
-                    ? <Icon
-                        name={Icons.back}
+                <View
+                    style={styles.containerRow}
+                >
+                    {backPress
+                        ? <Icon
+                            name={Icons.back}
+                        />
+                        : null}
+                    {left}
+                </View>
+    
+                <View
+                    style={styles.containerRow}
+                >
+                    {children}
+                </View>
+    
+                {title ?
+                    <Text
+                        style={styles.containerCenter}
+                        align={'center'}
+                        text={title}
+                        fontSize={Fonts.size.h3}
+                        bold
                     />
                     : null}
-                {left}
+    
             </View>
-
-            <View
-                style={styles.containerRow}
-            >
-                {children}
-            </View>
-
-            {title ?
-                <Text
-                    style={styles.containerCenter}
-                    align={'center'}
-                    text={title}
-                    fontSize={Fonts.size.h3}
-                    bold
-                />
-                : null}
-
-        </View>
-    );
-};
+        );
+    }
+}
 
 let styles = StyleSheet.create({
     containers: {
@@ -68,18 +84,3 @@ let styles = StyleSheet.create({
         right: 0
     }
 });
-
-HeaderApp.propTypes = {
-    style: PropTypes.any,
-    title: PropTypes.string,
-    children: PropTypes.any,
-    left: PropTypes.any,
-    backPress: PropTypes.func,
-    center: PropTypes.string
-};
-
-HeaderApp.defaultProps = {
-
-};
-
-export default HeaderApp;
