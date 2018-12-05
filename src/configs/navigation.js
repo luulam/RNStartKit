@@ -96,7 +96,7 @@ const AppNavigator = createStackNavigator(
             }, {
                     tabBarComponent: TabBarBottom,
                     tabBarPosition: 'bottom',
-                    swipeEnabled: false,
+                    swipeEnabled: true,
                     lazy: true,
                     tabBarOptions: {
                         activeTintColor: 'black',

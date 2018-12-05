@@ -15,7 +15,7 @@ const metrics = {
   appWidth: width < height ? width : height,
   appHeight: width < height ? height : width,
   navBarHeight: (Platform.OS === 'ios') ? 56 : 48,
-  statusBarHeight: width < height ? getStatusBarHeight() : 0,
+  statusBarHeight: width < height ? 0 : 0,
   btnRadius: 4,
   btnHeight: 38,
   icons: {

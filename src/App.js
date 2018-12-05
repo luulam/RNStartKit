@@ -3,6 +3,7 @@ import { StatusBar, YellowBox } from 'react-native';
 import { Provider } from 'react-redux';
 import CreateStore, { sagaMiddleware, RootSaga } from './Configs/CreateStore';
 import Navigation from './Configs/Navigation'
+import { SafeAreaView } from 'react-navigation';
 
 import { Notify, Dialog, View } from './Components';
 
@@ -10,7 +11,7 @@ YellowBox.ignoreWarnings(['unknown call: "relay:check"']);
 
 const app = () => (
   <Provider store={CreateStore}>
-    <View style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 }}>
       <StatusBar
         translucent
         barStyle="dark-content"
@@ -20,7 +21,10 @@ const app = () => (
 
       <Notify />
       <Dialog />
-    </View >
+    </SafeAreaView>
+
+
+
   </Provider >
 );
 
